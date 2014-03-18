@@ -10,30 +10,33 @@
 ## http://www.utf8-chartable.de/
 #########################################################################
 
+import base64
 
 def index():
     return dict(message="Hello from MyApp")
 
 def songform():
     if request.vars.title:
-		session.title = formattitle(request.vars.title, request.vars.author)
+		session.title = maketitledata(request.vars.title, request.vars.author)
 		redirect(URL('songfile'))
     return dict()
 	
 def songfile():
 	return dict(message="Hello from MyApp")
 
+def maketitledata( title, author):
+    return base64.b64encode(formattitle(title,author))
+	
 def formattitle( title, author ):
     return ("{\\rtf1\\ansi\\ansicpg1252\\cocoartf1265\n" +
 			"\\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}\n" +
 			"{\\colortbl;\\red255\\green255\\blue255;}\n" +
 			"\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\pardirnatural\\qr\n"+
 			"\n"
-			"\\f0\\fs100 \\cf1 " + formatunicode(title) + "\n"
+			"\\f0\\fs100 \\cf1 " + formatunicode(title) + "\\\n"
 			"\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\pardirnatural\\qr\n"+
-			"\n"
+			"\r\n"
 			"\\fs60 \\cf1 " + formatunicode(author) + "}")
-	
 	
 
 ## http://www.utf8-chartable.de/	
