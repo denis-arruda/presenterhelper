@@ -17,8 +17,16 @@ def index():
 
 def songform():
     if request.vars.title:
-		session.title = maketitledata(request.vars.title, request.vars.author)
-		redirect(URL('songfile'))
+		# session.title = maketitledata(request.vars.title, request.vars.author)
+        # redirect(URL('songfile'))
+        response.headers['Content-Type'] = 'text/xml'
+        attachment = 'attachment;filename=' + request.vars.title + '.pro5'
+        response.headers['Content-Disposition'] = attachment
+        content = maketitledata(request.vars.title, request.vars.author)
+        raise HTTP(200,str(content),
+                   **{'Content-Type':'text/xml',
+                      'Content-Disposition':attachment + ';'})
+        redirect(URL('songfile'))
     return dict()
 	
 def songfile():
@@ -169,7 +177,6 @@ def formatunicode( text ):
 	str = str.replace("\x7d","\\\'7d")
 	str = str.replace("\x7e","\\\'7e")
 	return str
-	
 	
 def user():
     """
