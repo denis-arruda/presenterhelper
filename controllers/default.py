@@ -65,6 +65,12 @@ filefooter = ("</displayElements>"
     "<arrangements containerClass=\"NSMutableArray\"></arrangements>"
     "</RVPresentationDocument>")
 
+rtflinestart = ("{\\rtf1\\ansi\\ansicpg1252\\cocoartf1265"
+    "\\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}"
+    "{\\colortbl;\\red255\\green255\\blue255;}"
+    "\\pard\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\pardirnatural\\qc"
+    "\\f0\\fs104 \\cf1")
+
 def index():
     return dict(message="Hello from MyApp")
 
@@ -72,6 +78,7 @@ def songform():
     if request.vars.title:
         session.title = request.vars.title
         session.author = request.vars.author
+        session.lyrics = request.vars.lyrics
         redirect(URL('songfile'))
     return dict()
 	
@@ -80,9 +87,10 @@ def songfile():
 	
 def generate():
     response.headers['Content-Type'] = 'text/xml'
-    attachment = 'attachment;filename=' + session.title + '.pro5'
+    attachment = 'attachment;filename=' + session.title.strip() + '.pro5'
     response.headers['Content-Disposition'] = attachment
-    content = fileheader + titlepart1 + maketitledata(session.title, session.author) + titlepart2 + filefooter
+    lines = formatlyrics(session.lyrics)
+    content = fileheader + titlepart1 + maketitledata(session.title, session.author) + titlepart2 + filefooter + "\r\n" + lines
     raise HTTP(200,str(content),
                **{'Content-Type':'text/xml',
                   'Content-Disposition':attachment + ';'})
@@ -100,7 +108,25 @@ def formattitle( title, author ):
 			"\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\pardirnatural\\qr\n"+
 			"\r\n"
 			"\\fs60 \\cf1 " + formatunicode(author) + "}")
-	
+
+def formatlyrics( text ):
+    lines = text.splitlines()
+    str_lines = filter(None,lines)
+    count = 0
+    result = ""
+    while (count < (len(str_lines) - 1)):
+        result = result + formatlines(str_lines[count], str_lines[count+1]) + "\r\n"
+        count = count + 2
+    if ((len(str_lines) % 2) == 1):
+        count = len(str_lines) - 1
+        result = result + formatline(str_lines[count]) + "\r\n"
+    return result
+
+def formatlines( line1, line2 ):
+    return base64.b64encode(rtflinestart + " " +formatunicode(line1) + " \\\r\n " + formatunicode(line2) + "}")
+
+def formatline ( line1 ):
+    return base64.b64encode(rtflinestart + " " + formatunicode(line1) + "}")
 
 ## http://www.utf8-chartable.de/	
 ## str = text.replace("\xc3\xb3","\\\'f3")
@@ -232,7 +258,7 @@ def formatunicode( text ):
 	str = str.replace("\x7d","\\\'7d")
 	str = str.replace("\x7e","\\\'7e")
 	return str
-	
+
 def user():
     """
     exposes:
