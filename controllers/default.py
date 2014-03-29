@@ -12,38 +12,27 @@
 
 import base64
 
-fileheader = ("<RVPresentationDocument height=\"720\" width=\"1280\" versionNumber=\"500\" docType=\"0\" creatorCode=\"0000000000\" lastDateUsed=\"2014-03-12T18:16:36\" usedCount=\"0\" category=\"M\xc3\xbasica\" resourcesDirectory=\"\" backgroundColor=\"1 0.5 0 1\" drawingBackgroundColor=\"0\" notes=\"\" artist=\"\" author=\"\" album=\"\" CCLIDisplay=\"0\" CCLIArtistCredits=\"\" CCLISongTitle=\"\" CCLIPublisher=\"\" CCLICopyrightInfo=\"\" CCLILicenseNumber=\"\" chordChartPath=\"\">"
-    "<timeline timeOffSet=\"0\" selectedMediaTrackIndex=\"0\" unitOfMeasure=\"60\" duration=\"0\" loop=\"0\">"
-    "<timeCues containerClass=\"NSMutableArray\"></timeCues>"
-    "<mediaTracks containerClass=\"NSMutableArray\"></mediaTracks>"
-    "</timeline>"
-    "<bibleReference containerClass=\"NSMutableDictionary\"></bibleReference>"
-    "<_-RVProTransitionObject-_transitionObject transitionType=\"-1\" transitionDuration=\"1\" motionEnabled=\"0\" motionDuration=\"20\" motionSpeed=\"100\"></_-RVProTransitionObject-_transitionObject>"
-    "<groups containerClass=\"NSMutableArray\">"
-    "<RVSlideGrouping name=\"galactic-fireworks-stars\" uuid=\"FF45CF72-C3AF-4DD0-9C52-ADF428C4D6D9\" color=\"0 0 1 1\" serialization-array-index=\"0\">"
-    "<slides containerClass=\"NSMutableArray\">"
-    "<RVDisplaySlide backgroundColor=\"0 0 0 0\" enabled=\"1\" highlightColor=\"\" hotKey=\"\" label=\"\" notes=\"\" slideType=\"1\" sort_index=\"0\" UUID=\"1AAC2C18-292F-42B1-8EAF-518C80ADC19C\" drawingBackgroundColor=\"0\" chordChartPath=\"\" serialization-array-index=\"0\">"
-    "<cues containerClass=\"NSMutableArray\">"
-    "<RVMediaCue displayName=\"galactic-fireworks-stars\" delayTime=\"0\" timeStamp=\"0\" enabled=\"1\" UUID=\"5FA2E744-C870-41B7-8725-7819E6724C41\" parentUUID=\"5FA2E744-C870-41B7-8725-7819E6724C41\" elementClassName=\"RVVideoElement\" behavior=\"1\" alignment=\"4\" serialization-array-index=\"0\">"
-	"<element displayDelay=\"0\" displayName=\"galactic-fireworks-stars\" locked=\"0\" persistent=\"0\" typeID=\"0\" fromTemplate=\"0\" bezelRadius=\"0\" drawingFill=\"0\" drawingShadow=\"0\" drawingStroke=\"0\" fillColor=\"1 1 1 1\" rotation=\"0\" source=\"file://localhost/Users/m3cpcp/Documents/Liturgia/Biblioteca%20de%20vi%CC%81deos/Vi%CC%81deos%20de%20Fundo/galactic-fireworks-stars.mov\" flippedHorizontally=\"0\" flippedVertically=\"0\" scaleFactor=\"1\" serializedImageOffset=\"0.000000@0.000000\" serializedFilters=\"YnBsaXN0MDDUAQIDBAUIFhdUJHRvcFgkb2JqZWN0c1gkdmVyc2lvblkkYXJjaGl2ZXLRBgdUcm9vdIABowkKD1UkbnVsbNILDA0OViRjbGFzc1pOUy5vYmplY3RzgAKg0hAREhNYJGNsYXNzZXNaJGNsYXNzbmFtZaMTFBVeTlNNdXRhYmxlQXJyYXlXTlNBcnJheVhOU09iamVjdBIAAYagXxAPTlNLZXllZEFyY2hpdmVyCBEWHygyNTo8QEZLUl1fYGVueX2MlJ2iAAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=\" scaleBehavior=\"1\" brightness=\"0\" contrast=\"1\" saturation=\"1\" hue=\"0\" manufactureURL=\"\" manufactureName=\"\" format=\"H.264\" enableColorFilter=\"0\" colorFilter=\"1 0 0 1\" enableBlur=\"0\" blurRadius=\"0\" enableEdgeBlur=\"0\" edgeBlurRadius=\"0\" edgeBlurArea=\"0\" enableSepia=\"0\" enableColorInvert=\"0\" enableGrayInvert=\"0\" enableHeatSignature=\"0\" audioVolume=\"1\" inPoint=\"0\" outPoint=\"720720\" playRate=\"1\" playbackBehavior=\"1\" timeScale=\"24000\" endPoint=\"720720\">"
-	"<_-RVRect3D-_position x=\"0\" y=\"0\" z=\"0\" width=\"1280\" height=\"720\"></_-RVRect3D-_position>"
-	"<_-D-_serializedShadow containerClass=\"NSMutableDictionary\">"
-	"<NSMutableString serialization-native-value=\"{5, -5}\" serialization-dictionary-key=\"shadowOffset\"></NSMutableString>"
-	"<NSNumber serialization-native-value=\"0\" serialization-dictionary-key=\"shadowBlurRadius\"></NSNumber>"
-	"<NSColor serialization-native-value=\"0 0 0 0.3333333432674408\" serialization-dictionary-key=\"shadowColor\"></NSColor>"
-	"</_-D-_serializedShadow>"
-	"<stroke containerClass=\"NSMutableDictionary\">"
-	"<NSColor serialization-native-value=\"0 0 0 1\" serialization-dictionary-key=\"RVShapeElementStrokeColorKey\"></NSColor>"
-	"<NSNumber serialization-native-value=\"1\" serialization-dictionary-key=\"RVShapeElementStrokeWidthKey\"></NSNumber>"
-	"</stroke>"
-	"</element>"
-	"<_-RVProTransitionObject-_transitionObject></_-RVProTransitionObject-_transitionObject>"
-	"</RVMediaCue>"
-    "</cues>"
-    "<displayElements containerClass=\"NSMutableArray\">")
-  
-titlepart1 = ("<RVTextElement displayDelay=\"0\" displayName=\"\" locked=\"0\" persistent=\"0\" typeID=\"0\" fromTemplate=\"0\" bezelRadius=\"0\" drawingFill=\"0\" drawingShadow=\"1\" drawingStroke=\"0\" fillColor=\"0 0 0 1\" rotation=\"0\" source=\"\" adjustsHeightToFit=\"0\" verticalAlignment=\"1\" RTFData=\"")
-titlepart2 = ("\" revealType=\"0\" serialization-array-index=\"0\">"
+start_document = ("<RVPresentationDocument height=\"768\" width=\"1024\" versionNumber=\"500\" docType=\"0\" creatorCode=\"1349676880\" lastDateUsed=\"2012-04-05T00:16:34\" usedCount=\"0\" category=\"M\xc3\xbasica\" resourcesDirectory=\"\" backgroundColor=\"1 0.5 0 1\" drawingBackgroundColor=\"0\" notes=\"\" artist=\"\" author=\"\" album=\"\" CCLIDisplay=\"0\" CCLIArtistCredits=\"\" CCLISongTitle=\"\" CCLIPublisher=\"\" CCLICopyrightInfo=\"\" CCLILicenseNumber=\"\" chordChartPath=\"\">"
+	"<timeline timeOffSet=\"0\" selectedMediaTrackIndex=\"0\" unitOfMeasure=\"60\" duration=\"0\" loop=\"0\">"
+		"<timeCues containerClass=\"NSMutableArray\"></timeCues>"
+		"<mediaTracks containerClass=\"NSMutableArray\"></mediaTracks>"
+	"</timeline>"
+	"<bibleReference containerClass=\"NSMutableDictionary\"></bibleReference>"
+	"<_-RVProTransitionObject-_transitionObject transitionType=\"-1\" transitionDuration=\"1\" motionEnabled=\"0\" motionDuration=\"20\" motionSpeed=\"100\"></_-RVProTransitionObject-_transitionObject>"
+		"<groups containerClass=\"NSMutableArray\">"
+			"<RVSlideGrouping name=\"Verse 1\" uuid=\"3986CF53-D65A-433F-9B39-4115DD9DCB66\" color=\"0 0 1 1\" serialization-array-index=\"0\">"
+				"<slides containerClass=\"NSMutableArray\">")
+
+start_slide_part1 = ("<RVDisplaySlide backgroundColor=\"0 0 0 0\" enabled=\"1\" highlightColor=\"\" hotKey=\"\" label=\"\" notes=\"\" slideType=\"1\" sort_index=\"")
+
+start_slide_part2 = ("\" UUID=\"7EBF6747-5CF5-44EC-9A47-EF4F06F20559\" drawingBackgroundColor=\"0\" chordChartPath=\"\" serialization-array-index=\"")
+
+start_slide_part3 = ("\"><cues containerClass=\"NSMutableArray\"></cues>"
+					"<displayElements containerClass=\"NSMutableArray\">")
+
+title_part1 = ("<RVTextElement displayDelay=\"0\" displayName=\"\" locked=\"0\" persistent=\"0\" typeID=\"0\" fromTemplate=\"0\" bezelRadius=\"0\" drawingFill=\"0\" drawingShadow=\"1\" drawingStroke=\"0\" fillColor=\"0 0 0 1\" rotation=\"0\" source=\"\" adjustsHeightToFit=\"0\" verticalAlignment=\"1\" RTFData=\"")
+
+title_part2 = ("\" revealType=\"0\" serialization-array-index=\"0\">"
     "<_-RVRect3D-_position x=\"40\" y=\"40\" z=\"1\" width=\"1200\" height=\"160\"></_-RVRect3D-_position>"
     "<_-D-_serializedShadow containerClass=\"NSMutableDictionary\">"
 	"<NSMutableString serialization-native-value=\"{4.3301301, -2.5}\" serialization-dictionary-key=\"shadowOffset\"></NSMutableString>"
@@ -55,21 +44,49 @@ titlepart2 = ("\" revealType=\"0\" serialization-array-index=\"0\">"
 	"<NSNumber serialization-native-value=\"1\" serialization-dictionary-key=\"RVShapeElementStrokeWidthKey\"></NSNumber>"
 	"</stroke>"
     "</RVTextElement>")
+
+line_part1 = ("<RVTextElement displayDelay=\"0\" displayName=\"\" locked=\"0\" persistent=\"0\" typeID=\"0\" fromTemplate=\"0\" bezelRadius=\"0\" drawingFill=\"0\" drawingShadow=\"1\" drawingStroke=\"0\" fillColor=\"0 0 0 0.300000011920929\" rotation=\"0\" source=\"\" adjustsHeightToFit=\"0\" verticalAlignment=\"0\" RTFData=\"")
+
+line_part2 = ("\" revealType=\"0\" serialization-array-index=\"1\">"
+				"<_-RVRect3D-_position x=\"0\" y=\"505\" z=\"0\" width=\"1024\" height=\"240\"></_-RVRect3D-_position>"
+					"<_-D-_serializedShadow containerClass=\"NSMutableDictionary\">"
+						"<NSMutableString serialization-native-value=\"{4.3301301, -2.5}\" serialization-dictionary-key=\"shadowOffset\"></NSMutableString>"
+							"<NSNumber serialization-native-value=\"5\" serialization-dictionary-key=\"shadowBlurRadius\"></NSNumber>"
+								"<NSColor serialization-native-value=\"0 0 0 0.75\" serialization-dictionary-key=\"shadowColor\"></NSColor>"
+								"</_-D-_serializedShadow>"
+								"<stroke containerClass=\"NSMutableDictionary\">"
+									"<NSColor serialization-native-value=\"0 0 0 1\" serialization-dictionary-key=\"RVShapeElementStrokeColorKey\"></NSColor>"
+									"<NSNumber serialization-native-value=\"1\" serialization-dictionary-key=\"RVShapeElementStrokeWidthKey\"></NSNumber>"
+								"</stroke>"
+							"</RVTextElement>"
+							"<RVShapeElement displayDelay=\"0\" displayName=\"\" locked=\"0\" persistent=\"0\" typeID=\"0\" fromTemplate=\"0\" bezelRadius=\"0\" drawingFill=\"1\" drawingShadow=\"0\" drawingStroke=\"0\" fillColor=\"0 0 0 0.2000000029802322\" rotation=\"0\" source=\"\" serialization-array-index=\"2\">"
+								"<_-RVRect3D-_position x=\"0\" y=\"500\" z=\"0\" width=\"1024\" height=\"250\"></_-RVRect3D-_position>"
+								"<_-D-_serializedShadow containerClass=\"NSMutableDictionary\">"
+									"<NSMutableString serialization-native-value=\"{5, -5}\" serialization-dictionary-key=\"shadowOffset\"></NSMutableString>"
+									"<NSNumber serialization-native-value=\"0\" serialization-dictionary-key=\"shadowBlurRadius\"></NSNumber>"
+									"<NSColor serialization-native-value=\"0 0 0 0.3333333432674408\" serialization-dictionary-key=\"shadowColor\"></NSColor>"
+								"</_-D-_serializedShadow>"
+								"<stroke containerClass=\"NSMutableDictionary\">"
+									"<NSColor serialization-native-value=\"0 0 0 1\" serialization-dictionary-key=\"RVShapeElementStrokeColorKey\"></NSColor>"
+									"<NSNumber serialization-native-value=\"1\" serialization-dictionary-key=\"RVShapeElementStrokeWidthKey\"></NSNumber>"
+								"</stroke>"
+							"</RVShapeElement>")
+
+end_slide = ("</displayElements>"
+				"<_-RVProTransitionObject-_transitionObject transitionType=\"-1\" transitionDuration=\"1\" motionEnabled=\"0\" motionDuration=\"20\" motionSpeed=\"100\"></_-RVProTransitionObject-_transitionObject>"
+					"</RVDisplaySlide>")
   
-filefooter = ("</displayElements>"
-    "<_-RVProTransitionObject-_transitionObject transitionType=\"-1\" transitionDuration=\"1\" motionEnabled=\"0\" motionDuration=\"20\" motionSpeed=\"100\"></_-RVProTransitionObject-_transitionObject>"
-    "</RVDisplaySlide>"
-    "</slides>"
-    "</RVSlideGrouping>"
-    "</groups>"
-    "<arrangements containerClass=\"NSMutableArray\"></arrangements>"
-    "</RVPresentationDocument>")
+end_document = (	"</slides>"
+				"</RVSlideGrouping>"
+			"</groups>"
+		"<arrangements containerClass=\"NSMutableArray\"></arrangements>"
+	"</RVPresentationDocument>")
 
 rtflinestart = ("{\\rtf1\\ansi\\ansicpg1252\\cocoartf1265"
     "\\cocoascreenfonts1{\\fonttbl\\f0\\fswiss\\fcharset0 Helvetica;}"
     "{\\colortbl;\\red255\\green255\\blue255;}"
-    "\\pard\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\pardirnatural\\qc"
-    "\\f0\\fs104 \\cf1")
+    "\\pard\\tx560\\tx1120\\tx1680\\tx2240\\tx2800\\tx3360\\tx3920\\tx4480\\tx5040\\tx5600\\tx6160\\tx6720\\pardirnatural\\qc"
+    "\\f0\\fs104\\cf1")
 
 def index():
     return dict(message="Hello from MyApp")
@@ -89,8 +106,8 @@ def generate():
     response.headers['Content-Type'] = 'text/xml'
     attachment = 'attachment;filename=' + session.title.strip() + '.pro5'
     response.headers['Content-Disposition'] = attachment
-    lines = formatlyrics(session.lyrics)
-    content = fileheader + titlepart1 + maketitledata(session.title, session.author) + titlepart2 + filefooter + "\r\n" + lines
+    lines = formatlyrics(maketitledata(session.title, session.author), session.lyrics)
+    content = start_document + lines + end_document
     raise HTTP(200,str(content),
                **{'Content-Type':'text/xml',
                   'Content-Disposition':attachment + ';'})
@@ -109,24 +126,33 @@ def formattitle( title, author ):
 			"\r\n"
 			"\\fs60 \\cf1 " + formatunicode(author) + "}")
 
-def formatlyrics( text ):
+def formatlyrics( title, text ):
     lines = text.splitlines()
     str_lines = filter(None,lines)
     count = 0
+    sort_index = 0
     result = ""
     while (count < (len(str_lines) - 1)):
-        result = result + formatlines(str_lines[count], str_lines[count+1]) + "\r\n"
+        result = result + start_slide_part1 + str(sort_index) + start_slide_part2 + str(sort_index) + start_slide_part3
+        sort_index = sort_index + 1
+        if (count == 0): 
+            result = result + title_part1 + title + title_part2 + line_part1 + formatlines(str_lines[count], str_lines[count+1]) + line_part2
+        else:
+            result = result + line_part1 + formatlines(str_lines[count], str_lines[count+1]) + line_part2
+        result = result + end_slide
         count = count + 2
     if ((len(str_lines) % 2) == 1):
+        result = result + start_slide_part1 + str(sort_index) + start_slide_part2 + str(sort_index) + start_slide_part3
         count = len(str_lines) - 1
-        result = result + formatline(str_lines[count]) + "\r\n"
+        result = result + line_part1 + formatline(str_lines[count]) + line_part2
+        result = result + end_slide
     return result
 
 def formatlines( line1, line2 ):
-    return base64.b64encode(rtflinestart + " " +formatunicode(line1) + " \\\r\n " + formatunicode(line2) + "}")
+    return base64.b64encode(rtflinestart + formatunicode(line1) + "\\\r\n" + formatunicode(line2) + "}")
 
 def formatline ( line1 ):
-    return base64.b64encode(rtflinestart + " " + formatunicode(line1) + "}")
+    return base64.b64encode(rtflinestart + formatunicode(line1) + "}")
 
 ## http://www.utf8-chartable.de/	
 ## str = text.replace("\xc3\xb3","\\\'f3")
